@@ -28,6 +28,13 @@ RSpec.describe 'User can filter by nation', type: :feature do
 
       expect(current_path).to eq("/search")
     end
+
+    it 'After filtering a nation, search index shows count of people' do
+      select 'Fire Nation', from: :nation
+      click_button 'Search For Members'
+
+      expect(page).to have_content(' people live here on the Fire Nation')
+    end
   end
 
 end
