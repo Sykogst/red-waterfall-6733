@@ -33,7 +33,7 @@ RSpec.describe 'User can filter by nation', type: :feature do
       select 'Fire Nation', from: :nation
       click_button 'Search For Members'
 
-      expect(page).to have_content(' people live here on the Fire Nation')
+      expect(page).to have_content('97 people live here on the Fire Nation')
     end
   end
 

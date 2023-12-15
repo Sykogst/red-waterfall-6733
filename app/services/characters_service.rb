@@ -8,6 +8,6 @@ class CharactersService < ApplicationService
   end
 
   def affiliation_search(keyword)
-    json_parse(get_json("/api/v1/characters?affiliation=#{keyword}"))
+    json_parse(get_json("/api/v1/characters?perPage=497&affiliation=#{keyword}"))
   end
 end
