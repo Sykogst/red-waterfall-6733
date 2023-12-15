@@ -36,11 +36,18 @@ RSpec.describe 'User can filter by nation', type: :feature do
       expect(page).to have_content('97 people live here')
     end
 
-    it 'After filtering, there is info for 25 members' do
+    it 'After filtering, there is info for 25 members: name, allies, enemies, affiliations, image' do
       select 'Fire Nation', from: :nation
       click_button 'Search For Members'
 
       expect(page).to have_selector('tbody tr', count: 25)
+      # Could test more
+      within "#character-5cf5679a915ecad153ab68da" do
+        expect(page).to have_content("Azula")
+        expect(page).to have_content("Ozai and Zuko")
+        expect(page).to have_content("Azula")
+        expect(page).to have_content("Azula's team (formerly) Dai Li (formerly) Fire Nation Fire Nation Royal Family Fire Warriors Royal Fire Academy for Girls (formerly)")
+      end
     end
 
 

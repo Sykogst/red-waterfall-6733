@@ -20,6 +20,13 @@
         <td><%= character.allies %></td>
         <td><%= character.enemies %></td>
         <td><%= character.affiliations %></td>
+        <td>
+          <% if character.image.present? %>
+            <%= image_tag(character.image) %>
+          <% else %>
+            No Image
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -32,6 +32,7 @@ RSpec.describe Character do
     expect(character.enemies).to eq(["Iroh", "Zuko", "Kuei", "Long Feng", "Mai", "Ty Lee", "Ursa "].to_sentence)
     expect(character.affiliations).to eq(" Azula's team (formerly) Dai Li (formerly) Fire Nation Fire Nation Royal Family Fire Warriors Royal Fire Academy for Girls (formerly)")
     expect(character.search_nation_count).to eq(97) # check this later
+    expect(character.image).to eq("https://vignette.wikia.nocookie.net/avatar/images/1/12/Azula.png/revision/latest?cb=20140905084941")
   end
 
   it "returns 'None' for allies and enemies if none exist" do
