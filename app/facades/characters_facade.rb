@@ -5,7 +5,7 @@ class CharactersFacade
     nation_count = data.count
   
     # not best way to get character count...but it works
-    data.map do |char_data|
+    data.first(25).map do |char_data|
       Character.new(char_data.merge(nation_count: nation_count))
     end
   end

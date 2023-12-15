@@ -1,0 +1,27 @@
+<h1>Search Results</h1>
+<p><%= @characters_facade.first.search_nation_count%> people live here</p>
+
+<h2>Characters</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Allies</th>
+      <th>Enemies</th>
+      <th>Affiliations</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @characters_facade.each do |character| %>
+      <tr id="character-<%= character.id %>">
+        <td><%= character.name %></td>
+        <td><%= character.allies %></td>
+        <td><%= character.enemies %></td>
+        <td><%= character.affiliations %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

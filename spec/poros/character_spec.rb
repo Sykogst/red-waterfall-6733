@@ -28,8 +28,8 @@ RSpec.describe Character do
     expect(character).to be_a(Character)
     expect(character.id).to eq("5cf5679a915ecad153ab68da")
     expect(character.name).to eq("Azula")
-    expect(character.allies).to eq(["Ozai", "Zuko "])
-    expect(character.enemies).to eq(["Iroh", "Zuko", "Kuei", "Long Feng", "Mai", "Ty Lee", "Ursa "])
+    expect(character.allies).to eq(["Ozai", "Zuko "].to_sentence)
+    expect(character.enemies).to eq(["Iroh", "Zuko", "Kuei", "Long Feng", "Mai", "Ty Lee", "Ursa "].to_sentence)
     expect(character.affiliations).to eq(" Azula's team (formerly) Dai Li (formerly) Fire Nation Fire Nation Royal Family Fire Warriors Royal Fire Academy for Girls (formerly)")
     expect(character.search_nation_count).to eq(97) # check this later
   end

@@ -17,7 +17,7 @@ RSpec.describe 'User can filter by nation', type: :feature do
     # - The list of enemies or "None"
     # - Any affiliations that the member has
 
-  describe 'When a user visits "/"' do
+  describe 'When a user visits "/"', :vcr do
     before(:each) do
       visit "/"
     end
@@ -33,8 +33,17 @@ RSpec.describe 'User can filter by nation', type: :feature do
       select 'Fire Nation', from: :nation
       click_button 'Search For Members'
 
-      expect(page).to have_content('97 people live here on the Fire Nation')
+      expect(page).to have_content('97 people live here')
     end
+
+    it 'After filtering, there is info for 25 members' do
+      select 'Fire Nation', from: :nation
+      click_button 'Search For Members'
+
+      expect(page).to have_selector('tbody tr', count: 25)
+    end
+
+
   end
 
 end

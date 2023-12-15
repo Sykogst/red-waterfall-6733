@@ -22,7 +22,7 @@ class Character
       if allies_data.nil? || allies_data.empty?
         "None"
       else
-        allies_data
+        allies_data.to_sentence
       end
     end
 
@@ -31,7 +31,7 @@ class Character
       if enemies_data.nil? || enemies_data.empty?
         "None"
       else
-        enemies_data
+        enemies_data.to_sentence
       end
     end
 end
